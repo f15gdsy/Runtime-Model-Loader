@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RuntimeModelLoader;
 
-namespace RuntimeModelLoaderEx {
+namespace RuntimeModelLoader.Ex {
 
 	public class ModelLoaderEx {
 
