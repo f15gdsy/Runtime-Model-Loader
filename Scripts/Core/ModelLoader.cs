@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO;
 
 namespace RuntimeModelLoader {
-
+	// Should be used wihtin this library only.
 	public class ModelLoader {
 
 		public static Mesh Load (string path) {
