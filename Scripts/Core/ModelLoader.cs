@@ -9,20 +9,18 @@ namespace RuntimeModelLoader {
 		public static Mesh Load (string path) {
 			if (!File.Exists(path)) return null;
 
-			string[] parts = path.Split(new []{"."}, System.StringSplitOptions.RemoveEmptyEntries);
-			if (parts.Length < 2) {	// No file extension
-				return null;
-			}
-
 			ParserBase parser = null;
 
-			string extention = parts[1];
+			string extention = Path.GetExtension(path);
 			switch (extention) {
-			case "obj":
+			case ".obj":
 				parser = new ObjParser();
 				break;
 			}
 
+			if (!File.Exists (path)) {
+				Debug.LogError ("Path does not exit: " + path);
+			}
 			Mesh mesh = parser.Parse(path);
 
 			return mesh;
